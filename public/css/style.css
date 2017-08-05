@@ -1,0 +1,23 @@
+body {
+    background-color: #78bec5;
+    font-family: 'Indie Flower', cursive;
+}
+
+.heading {
+    text-align: center;
+}
+
+.username-wrapper {
+    margin-top: 250px;
+    
+}
+
+/*.form-group {
+    margin-left:50px; 
+}*/
+
+.play-button {
+    position: relative;
+    top:5px;
+    left: 120px;
+}
