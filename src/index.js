@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/app.component";
-// var data = require("./testData.json");
-// console.dir(data);
+var App = require("./components/app.component").App;
+var BrowserRouter = require('react-router-dom').BrowserRouter;
+var Route = require('react-router-dom').Route;
+var Link = require('react-router-dom').Link;
 
 ReactDOM.render(
-    <App />,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
     document.getElementById("root")
 );

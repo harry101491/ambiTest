@@ -1,8 +1,7 @@
-import React from 'react';
-import Content from "./content.component";
-import Header from "./header.component";
+import React from "react";
+var Content = require("./content.component").Content;
+var Header = require("./header.component").Header;
 var axios = require("axios");
-// var data = require("../testData.json");
 
 class App extends React.Component{
     
@@ -19,18 +18,7 @@ class App extends React.Component{
     }
 
     componentDidMount() {
-        // ajax request
-        var self = this;
-        
-        axios.get("/contest").then(function(res){
-            // console.dir(res.data);
-            self.setState({
-                contests: res.data
-            });
-        },function(err){
-            console.log(err);
-        });
-
+         console.log("The component will get unmounted");
     }
 
     componentWillUnmount(){
@@ -49,4 +37,4 @@ class App extends React.Component{
     }
 }
 
-export default App;
+module.exports.App = App;

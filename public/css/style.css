@@ -12,6 +12,9 @@ body {
     
 }
 
+.gender-label {
+    margin-right: 20px;
+}
 /*.form-group {
     margin-left:50px; 
 }*/
@@ -20,4 +23,20 @@ body {
     position: relative;
     top:5px;
     left: 120px;
+}
+
+.main-menu {
+    margin-top: 20px;
+}
+
+.add-student-wrapper {
+    margin-top: 50px;
+}
+
+.add-teacher-wrapper {
+    margin-top: 50px;
+}
+
+.search-student-form {
+    margin-top: 50px;
 }

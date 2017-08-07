@@ -1,5 +1,14 @@
 import React from "react";
 var axios = require("axios");
+var BrowserRouter = require("react-router-dom").BrowserRouter;
+var Route = require("react-router-dom").Route;
+var Link = require("react-router-dom").Link;
+var Switch = require("react-router-dom").Switch;
+var AddStudent = require("./add_student.component").AddStudent;
+var AddTeacher = require("./add_teacher.component").AddTeacher;
+var SearchStudent = require("./search_student.component").SearchStudent;
+var SearchTeacher = require("./search_teacher.component").SearchTeacher;
+var AddMoreStudent = require("./add_more_student.component").AddMoreStudent;
 
 class Content extends React.Component {
     constructor(){
@@ -7,43 +16,46 @@ class Content extends React.Component {
         this.state = {
             inputValue : ""
         };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
     }
 
     handleChange(event) {
-        this.setState({
-            inputValue: event.target.value
-        });
+        // this.setState({
+        //     inputValue: event.target.value
+        // });
     }
 
     handleClick(){
-        // sending the data to the server by axios        
-        axios.post("/user",{
-            user_name: this.state.inputValue
-        }).then(function(res){
-            console.log(res);
-        }, function(err){
-            console.log(err);
-        });
+
+        // // sending the data to the server by axios        
+        // axios.post("/user",{
+        //     user_name: this.state.inputValue
+        // }).then(function(res){
+        //     console.log(res);
+        // }, function(err){
+        //     console.log(err);
+        // });
 
     }
 
     render() {
         return (
-            <div className="row username-wrapper">
-                <div className="col-xs-offset-3 col-xs-6 col-md-offset-4 col-md-4">
-                        <div className="form-group">
-                            <lable htmlFor="username">User Name </lable>
-                            <input className="form-control" type="text" id="username" onChange={this.handleChange} placeholder="Enter Name to Play" />
-                        </div>
-                        <div className="row">
-                            <a href="#getData"><button onClick={this.handleClick} className="btn btn-default col-xs-offset-4 col-sm-offset-5 col-md-offset-5">Play!</button></a>
-                        </div>
+            <div className="row">
+                <div className="col-md-12">
+                    <Switch>
+                        <Route path="/add_student" component={AddStudent}/>
+                        <Route path="/add_teacher" component={AddTeacher}/>
+                        <Route path="/search_student" component={SearchStudent} />
+                        <Route path="/search_teacher" component={SearchTeacher} />
+                        <Route path="/add_more_student" component={AddMoreStudent} />
+                    </Switch>
+                        {/*<MainMenu />*/}
                 </div> 
             </div>
         );
     }
 }
 
-export default Content;
+
+module.exports.Content = Content;
